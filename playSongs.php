@@ -53,10 +53,10 @@
             <input type="range" name="range" id="myProgressBar" min="0" max="100" value="0">
         </div>
         <div class="icons">
-            <img src="./assets/logos/fast-backward.png" id="backSong" alt="not found">
-            <img src="./assets/logos/play-button-song.png" id="playSong" alt="not found">
-            <img src="./assets/logos/pause-button.png" id="pauseSong" alt="not found">
-            <img src="./assets/logos/fast-forward.png" id="nextSong" alt="not found">
+        <img src="./assets/logos/icons8-back-arrow-32.png" id="backSong" alt="not found">
+            <img src="./assets/logos/icons8-circled-play-32.png" id="playSong" alt="not found">
+            <img src="./assets/logos/icons8-pause-button-32.png" id="pauseSong" alt="not found">
+            <img src="./assets/logos/icons8-forward-button-32.png" id="nextSong" alt="not found">
         </div>
         <div class="songInfo">
             <img src="./assets/logos/playing.gif" width="42px" alt="gif not found" id="songGif">
@@ -74,7 +74,8 @@
         let gif = document.getElementById('songGif');
         let masterSongName = document.getElementById('masterSongName');
         let masterSongArtist = document.getElementById('masterSongArtist');
-
+        const mainPlayerBar = document.querySelector('#mainPlayerBar')
+                mainPlayerBar.style.display = "flex"
         const songFolder = './uploadedMusics/';
         let audioElement = new Audio(songFolder + '<?php echo $songs[0]["songFilePath"] ?>');
         masterSongName.innerHTML = "<?php echo $songs[0]["title"] ?>";
@@ -93,6 +94,7 @@
             masterPlaySong.style.display = "none"
             masterPauseSong.style.display = "block"
             gif.style.opacity = 1;
+            mainPlayerBar.style.display = "flex"
             masterSongName.innerText = songs[song_count-1].title;
             masterSongArtist.innerHTML = songs[song_count-1].artistName;
             console.log("music playing..:" + audioElement.src)
@@ -105,6 +107,7 @@
                 masterPlaySong.style.display = "none"
                 masterPauseSong.style.display = "block"
                 gif.style.opacity = 1;
+                mainPlayerBar.style.display = "flex"
             }
         })
         masterPauseSong.addEventListener('click', () => {
@@ -113,6 +116,7 @@
                 masterPlaySong.style.display = "block"
                 masterPauseSong.style.display = "none"
                 gif.style.opacity = 0;
+                mainPlayerBar.style.display = "flex"
             }
         })
         // Listen to Events
@@ -143,7 +147,7 @@
             audioElement.play();
             masterPlaySong.style.display = "none"
             masterPauseSong.style.display = "block"
-
+            mainPlayerBar.style.display = "flex"
         })
 
         masterBackSong.addEventListener('click', () => {
@@ -159,7 +163,7 @@
             audioElement.play();
             masterPlaySong.style.display = "none"
             masterPauseSong.style.display = "block"
-
+            mainPlayerBar.style.display = "flex"
         })
 
         // const playBtn = document.querySelector('#playBtn')

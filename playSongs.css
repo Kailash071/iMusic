@@ -108,8 +108,9 @@ button {
   right: 0;
   bottom: 0;
   margin-bottom: 20px;
-  background-image: linear-gradient(to right, #242725, #434746, #656969, #898d8e, #b0b3b5, #b6c4cd, #bad5e6, #bee7ff, #87ebff, #43edec, #20ecc1, #5ae785);
-  color: black;
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFFFFF;
+  border-color: #3d464d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,6 +131,7 @@ button {
 }
 .icons > img {
   cursor: pointer;
+  color: #FFFF;
   /* border: 1px solid red; */
 }
 

@@ -30,33 +30,122 @@
             </div> -->
 
       </div>
+      <div class="mainPlayerBar" id="mainPlayerBar">
+        <div class="progressBar">
+            <input type="range" name="range" id="myProgressBar" min="0" max="100" value="0">
+        </div>
+        <div class="icons">
+            <img src="./assets/logos/icons8-back-arrow-32.png" id="backSong" alt="not found">
+            <img src="./assets/logos/icons8-circled-play-32.png" id="playSong" alt="not found">
+            <img src="./assets/logos/icons8-pause-button-32.png" id="pauseSong" alt="not found">
+            <img src="./assets/logos/icons8-forward-button-32.png" id="nextSong" alt="not found">
+        </div>
+        <div class="songInfo">
+            <img src="./assets/logos/playing.gif" width="42px" alt="gif not found" id="songGif">
+            <span id="masterSongName"> </span><span>-</span><span id="masterSongArtist"></span>
+        </div>
+    </div>
       <script>
          const btns = document.querySelector('#btns')
-         const pauseBtn = document.querySelector('#pauseBtn')
-                  
+         // Initialize the Variables
+         let songIndex = 0;
+        let masterPlaySong = document.getElementById('playSong');
+        let masterPauseSong = document.getElementById('pauseSong');
+        let masterBackSong = document.getElementById('backSong');
+        let masterNextSong = document.getElementById('nextSong');
+        let myProgressBar = document.getElementById('myProgressBar');
+        let gif = document.getElementById('songGif');
+        let masterSongName = document.getElementById('masterSongName');
+        let masterSongArtist = document.getElementById('masterSongArtist');
+         const mainPlayerBar = document.querySelector('#mainPlayerBar')
+         mainPlayerBar.style.display = "none"
          const songFolder = './uploadedMusics/';
          const audioElement = new Audio();
          const songs = <?php echo json_encode($songs) ?>;
          //console.log(songs.length)
          console.log(songs)
 
-         function playMe(count) {
-            const song_count =count
+               //playing particular song
+        function playMe(count) {
+            const song_count = count
             audioElement.src = `./uploadedMusics/${songs[song_count-1].songFilePath}`;
             audioElement.play();
-           // btns.style.display = "flex"
-            //pauseBtn.style.display = "block";
-            console.log("music playing..:"+audioElement.src)
-         }
+            masterPlaySong.style.display = "none"
+            masterPauseSong.style.display = "block"
+            mainPlayerBar.style.display = "flex"
+            gif.style.opacity = 1;
+            masterSongName.innerText = songs[song_count-1].title;
+            masterSongArtist.innerHTML = songs[song_count-1].artistName;
+            console.log("music playing..:" + audioElement.src)
+        }
+
+        // Handle play/pause click
+        masterPlaySong.addEventListener('click', () => {
+            if (audioElement.paused || audioElement.currentTime <= 0) {
+                audioElement.play();
+                masterPlaySong.style.display = "none"
+                masterPauseSong.style.display = "block"
+                gif.style.opacity = 1;
+                mainPlayerBar.style.display = "flex"
+            }
+        })
+        masterPauseSong.addEventListener('click', () => {
+            if (audioElement.played || audioElement.currentTime >= 0) {
+                audioElement.pause();
+                masterPlaySong.style.display = "block"
+                masterPauseSong.style.display = "none"
+                gif.style.opacity = 0;
+                mainPlayerBar.style.display = "none"
+            }
+        })
+        // Listen to Events
+        audioElement.addEventListener('timeupdate', () => {
+            // Update Seekbar
+            progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+            myProgressBar.value = progress;
+        })
+
+        myProgressBar.addEventListener('change', () => {
+            audioElement.currentTime = myProgressBar.value * audioElement.duration / 100;
+        })
 
 
-         function pauseMe(count) {
-            const song_count =count
-            audioElement.pause();
-           // pauseBtn.style.display = "none";
-            console.log("music paused :"+audioElement.src)
-            
-         }
+        masterNextSong.addEventListener('click', () => {
+            if (songIndex >= songs.length) {
+                songIndex = 0
+            } else {
+                songIndex += 1;
+            }
+
+            audioElement.src = `./uploadedMusics/${songs[songIndex].songFilePath}`;
+            console.log(audioElement.src)
+            masterSongName.innerText = songs[songIndex].title;
+            masterSongArtist.innerHTML = songs[songIndex].artistName;
+            console.log(masterSongName)
+            audioElement.currentTime = 0;
+            audioElement.play();
+            masterPlaySong.style.display = "none"
+            masterPauseSong.style.display = "block"
+            mainPlayerBar.style.display = "flex"
+        })
+
+        masterBackSong.addEventListener('click', () => {
+            if (songIndex <= 0) {
+                songIndex = 0
+            } else {
+                songIndex -= 1;
+            }
+            audioElement.src = `./uploadedMusics/${songs[songIndex].songFilePath}`;
+            masterSongName.innerText = songs[songIndex].title;
+            masterSongArtist.innerHTML = songs[songIndex].artistName;
+            audioElement.currentTime = 0;
+            audioElement.play();
+            masterPlaySong.style.display = "none"
+            masterPauseSong.style.display = "block"
+            mainPlayerBar.style.display = "flex"
+
+        })
+
       </script>
       <!-- <div class="photos">
          <img src="./assets/images/arijitSingh.jpg" alt="not found">
@@ -147,6 +236,7 @@
       </button>
 
    </div>
+  
 </div>
 <script src="./home.js"></script>
 <?php include './footer.php'; ?>

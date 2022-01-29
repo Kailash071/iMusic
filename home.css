@@ -368,6 +368,64 @@ background-color: none;
   height: 50px;
   background-color: transparent;
 }
+/**********************mini player*********************************************/
+/* 
+.mainPlayerBar {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+ background: transparent;
+  color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-left: 50px;
+
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.icons > img {
+  cursor: pointer;
+ 
+}
+
+#myProgressBar {
+  width: 90vw;
+  cursor: pointer;
+}
+#pauseSong {
+  display: none;
+}
+.songInfo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -20px;
+  padding-left: 100px;
+  gap: 5px;
+}
+
+.songInfo img {
+  opacity: 0;
+  width: 50px;
+  height: 20px;
+  transition: opacity 0.4s ease-in;
+}
+ */
 
 /* audio:not([controls]) {
   display: none !important;
