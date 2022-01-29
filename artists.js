@@ -29,14 +29,3 @@ window.addEventListener("load", () => {
     }
   })
 /*********************************************************/
-// const artists = document.querySelector("#artists")
-// const contentArtists = document.querySelector("#contentArtists")
-// const playBtn = document.querySelector("#playBtn")
-// const artistsPlayList = document.querySelector("#artistsPlayList")
-
-// playBtn.addEventListener('click',()=>{
-  
-//   artists.style.display = "none"
-//   contentArtists.style.display = "none"
-//   artistsPlayList.style.display = "flex"
-// })

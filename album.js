@@ -25,13 +25,3 @@ window.addEventListener("load", () => {
     }
   })
 /*************************************************************************/
-// const playBtn_embeddedPlaylist = document.querySelector('#playBtnEmbeddedPlaylist')
-// const albums = document.querySelector('#albums')
-// const singles = document.querySelector('#singles')
-// const embeddedPlaylist = document.querySelector('#embeddedPlaylist')
-
-// playBtn_embeddedPlaylist.addEventListener('click',()=>{
-//   albums.style.display = "none"
-//   singles.style.display =  "none"
-//   embeddedPlaylist.style.display = "block"
-// })
