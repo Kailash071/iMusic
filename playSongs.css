@@ -1,0 +1,158 @@
+@import url(./home.css);
+.playlistContent {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to right bottom,
+    #424142,
+    #5d5b5e,
+    #79777b,
+    #96959a,
+    #b3b3ba,
+    #bac2d2,
+    #bbd3e9,
+    #b6e5fd,
+    #8aedfd,
+    #66f4e9,
+    #6cf6c2,
+    #97f48d
+  );
+  border-radius: 25px;
+  padding-left: 50px;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+}
+.artistsPlayList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.artistsPlayList > .artistName {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font_fam_pop);
+}
+.artistSongs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 30px;
+}
+.song,
+.songHeading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  background-color: transparent;
+   font-family: var(--font_fam_pop);
+}
+
+.song:hover {
+  background-color: #a7a5ac7e;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.songHeading {
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  border: none;
+}
+.songNo,
+.songName,
+.songArtist,
+.moreOptions,.downloadBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  /* border: 1px solid red; */
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.downloadBtn> button>img{
+  height: 30px;
+}
+.moreOptions> button>img{
+  height: 20px;
+}
+/***********************************************/
+
+.mainPlayerBar {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to right, #242725, #434746, #656969, #898d8e, #b0b3b5, #b6c4cd, #bad5e6, #bee7ff, #87ebff, #43edec, #20ecc1, #5ae785);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-left: 50px;
+
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.icons > img {
+  cursor: pointer;
+  /* border: 1px solid red; */
+}
+
+#myProgressBar {
+  width: 90vw;
+  cursor: pointer;
+}
+#pauseSong {
+  display: none;
+}
+.songInfo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: -20px;
+  padding-left: 100px;
+  gap: 5px;
+}
+
+.songInfo img {
+  opacity: 0;
+  width: 50px;
+  height: 20px;
+  transition: opacity 0.4s ease-in;
+}

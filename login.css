@@ -1,0 +1,160 @@
+@import url(./home.css);
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.nav > .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.logo>span{
+  font-family: var(--font_fam_ubu);
+  font-weight: 600;
+  letter-spacing: 0.44px;
+}
+.btn > .registerBtn {
+  font-size: 0.8rem;
+  letter-spacing: 0.25px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #1fdf64;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+}
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formCard {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.formCard > .form-label {
+  width: 450px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+  font-family: var(--font_fam_pop);
+}
+.form-label > span {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: var(--font_fam_pop);
+  letter-spacing: 1px;
+}
+.formCard > .form-controls {
+  width: 450px;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+}
+.login-option-google,.login-option-phone{
+    width: 450px;
+    height: 52px;
+    border-radius: 500px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 14px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow:#616467 0px 0px 0px 2px;
+    color:#616467;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.login-option-google{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    
+}
+.login-option-google:hover,.login-option-phone:hover{
+    background-color: #616467;
+    color:var(--white);
+    border: none;
+    outline: none;
+}
+.blank{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    
+}
+.blank>hr{
+    width: 350px;
+}
+#email,
+#password{
+  width: 450px;
+  height: 52px;
+  border-radius: 4px;
+  line-height: 24px;
+  padding: 14px;
+  outline: none;
+  font-size: 14px;
+  background-color: var(--white);
+  border: 1px solid #d9dadc;
+  font-family: var(--font_fam_pop);
+}
+.form-submit {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login{
+  width: 158px;
+  height: 58px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  border-radius: 500px;
+  font-size: 1.2rem;
+  background-color: #1fdf64;
+  font-family: var(--font_fam_pop);
+  cursor: pointer;
+}

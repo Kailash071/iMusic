@@ -1,0 +1,284 @@
+@import url(./home.css);
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.nav > .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.logo>span{
+  font-family: var(--font_fam_ubu);
+  font-weight: 600;
+  letter-spacing: 0.44px;
+}
+.btn > .loginBtn {
+  font-size: 0.8rem;
+  letter-spacing: 0.25px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #1fdf64;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+}
+.form ,.formOtp{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formCard {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.formCard > .form-label {
+  width: 450px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.form-label > span {
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: var(--font_fam_pop);
+}
+.formCard > .form-controls {
+  width: 450px;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+}
+.form-controls > span > a {
+  color: #117a37;
+  font-size: 0.8rem;
+}
+#name,
+#email,
+#password,
+#conf-password,#otp {
+  width: 450px;
+  height: 52px;
+  border-radius: 4px;
+  line-height: 24px;
+  padding: 14px;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid #d9dadc;
+  font-family: var(--font_fam_pop);
+}
+.form-submit,.form-submit-phone {
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#register{
+  width: 158px;
+  height: 58px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  border-radius: 500px;
+  font-size: 1.2rem;
+  background-color: #1fdf64;
+  font-family: var(--font_fam_pop);
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.form-controls > #date {
+  width: 450px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:35px;
+  font-family: var(--font_fam_pop);
+
+}
+.day,.month,.year{
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between ;
+  align-items: center;
+}
+.day > #day,
+.month > #month,
+.year > #year {
+  width: 123px;
+  height: 52px;
+  padding: 14px;
+  border: 1px solid #d9dadc;
+  background-color: transparent;
+  font-family: var(--font_fam_pop);
+}
+
+/**********Register with phone number ******/
+.num-form-controls {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.num-form-controls>.label{
+    width: 450px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.phone{
+    width: 450px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.phoneCode {
+  width: 100px;
+  height: 52px;
+  color: #222326;
+  line-height: 24px;
+}
+.phoneCode > .code {
+  width: 99px;
+  height: 52px;
+  align-items: center;
+  color: #222326;
+  line-height: 24px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #d9dadc;
+  font-family: var(--font_fam_pop);
+  outline: none;
+  margin-right: 1px;
+  background-color: transparent;
+}
+.number > #phoneNumber {
+  width: 350px;
+  height: 52px;
+  border-radius: 4px;
+  line-height: 24px;
+  padding: 14px;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid#d9dadc;
+  font-family: var(--font_fam_pop);
+}
+#getCode{
+  width: 158px;
+  height: 45px; 
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: 1px solid var(--green);
+  outline: none;
+  border-radius: 500px;
+  font-size: 1rem;
+background-color: transparent;
+  font-family: var(--font_fam_pop);
+  cursor: pointer;
+}
+#getCode:hover{
+  background-color: #d2d3d2b2;
+  border: none;
+}
+
+.form-controls-captcha-code{
+  width: 450px;
+  height: 104px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 20px;
+}
+/* .form-controls-captcha{
+  width: auto;
+  height: auto;
+}*/
+.form-submit-phone{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border:1px solid red; */
+  margin-top: -40px;
+}
+#registerNumber{
+  width: 158px;
+  height: 58px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  border-radius: 500px;
+  font-size: 1.2rem;
+  background-color: #1fdf64;
+  font-family: var(--font_fam_pop);
+  cursor: pointer;
+}
+/*****otp****/
+/* .formCard>.formOtp-submit{
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -30px;
+}
+.formOtp-submit>a{
+  color:#15883e;
+}
+.formOtp-submit>a:hover{
+  color:#1fdf64;
+}
+.formOtp-controls{
+  width: 400px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formOtp-controls>span{
+width:370px;
+color:#222326;
+font-family:var(--font_fam_pop);
+margin:8px 0px 16px;
+text-align:center;
+} */

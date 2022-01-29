@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu+Mono&family=Varela+Round&display=swap");
+@import url(./home.css);
+/*************navbar css*************/
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  font-family: var(--font_fam_pop);
+}
+
+.logo > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: var(--black);
+  text-decoration: none;
+  font-family: var(--font_fam_pop);
+}
+.logo > a > span {
+  font-family: var(--font_fam_ubu);
+  font-weight: 600;
+  letter-spacing: 0.44px;
+}
+.navLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  list-style-type: none;
+}
+.link > a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--black);
+  letter-spacing: 1px;
+}
+.link > a:hover {
+  border-bottom: 1px solid var(--green);
+}
+.navRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.searchDiv {
+  height: 40px;
+}
+#searchBar {
+  width: 250px;
+  height: 40px;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-family: var(--font_fam_pop);
+}
+#searchBar:hover {
+  border: 1px solid var(--green);
+}
+#searchBtn {
+  font-size: 1rem;
+  height: 40px;
+  padding: 6px 8px;
+  text-align: center;
+  /* background-color: var(--primary); */
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+  transition: 0.4s;
+}
+#searchBtn:hover {
+  background-color: var(--white);
+  border: 1px solid var(--green);
+  transition: 0.4s;
+}
+.userProfile {
+  /* border: 1px solid red; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.userProfile > img {
+  height: 40px;
+  cursor: pointer;
+}
+.userProfile > span {
+  color: var(--black);
+  padding-left: 3px;
+  cursor: pointer;
+}
+
+.userProfile > span > a {
+  text-decoration: none;
+  color: var(--black);
+  padding-left: 2px;
+  letter-spacing: 1px;
+}
+.logOutDiv {
+  display: none;
+}
+.logOutDiv > button {
+  font-size: 0.8rem;
+  letter-spacing: 0.25px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #1fdf64;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+}
+.logOutDiv>button:hover{
+  background-color: #1fdf64;
+}
+.premiumPlans{
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.premiumPlans>#premiumBtn{
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 5px 8px;
+  border-radius: 16px;
+  font-weight: 700;
+  background-color:  #d2d3d2b2;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+}
+.premiumPlans>#premiumBtn:hover{
+  background-color: var(--green);
+}
+
+.actionBtn > .registerBtn {
+  font-size: 0.8rem;
+  letter-spacing: 0.25px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #1fdf64;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+}
+.actionBtn > .loginBtn {
+  font-size: 0.8rem;
+  letter-spacing: 0.25px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #1fdf64;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font_fam_pop);
+}
+.loginBtn > a,
+.registerBtn > a {
+  text-decoration: none;
+  color: var(--black);
+  padding: 2px;
+}

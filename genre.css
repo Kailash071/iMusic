@@ -1,0 +1,87 @@
+@import url(./home.css);
+.divGenre{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    padding-left: 50px;
+    padding-bottom: 25px;
+    background-image: linear-gradient(to top, #969d9a, #a8afae, #bbc1c2, #cfd3d5, #e4e5e7, #e3ebf2, #dff2fa, #d9f9ff, #a2fcfd, #66feea, #30fcc4, #34f88f);
+    border-radius: 25px ;
+    margin-bottom: 50px;
+}
+.divGenre>.heading{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    font-family: var(--font_fam_pop);
+}
+.heading>span{
+    padding: 0 5px;
+}
+/**********For You******************/
+.divGenre>.forYou,.divGenre>.moodMoments{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    padding: 10px 0;
+}
+.forYou>.title,.moodMoments>.title,.genres>.title{
+    width: 100%;
+    height: 48px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    font-family: var(--font_fam_pop);
+}
+.forYou>.genreItems,.moodMoments>.genreItems,.genres>.genreItems{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(auto,1fr);
+    row-gap: 20px;    
+}
+.genreItems>.genreItem{
+    width: 277.77px;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:#55555a73;
+    border: none;
+    outline: none;
+     border-radius: 8px;
+     cursor: pointer;
+    /* border: 1px solid red; */
+}
+.genreItem:hover{
+    background-color:#3a3a42a2;
+}
+.genreItem>.itemColor{
+    height: 100%;
+    width: 5px;
+    background-color:dodgerblue;
+    border-radius: 8px 0 0 8px;    
+}
+/* .genreItem:nth-child(1n)>.itemColor{
+    background-color:darkcyan;
+} */
+.genreItem:nth-child(2n)>.itemColor{
+    background-color:crimson;
+}
+.genreItem:nth-child(3n)>.itemColor{
+    background-color:darkblue;
+}
+
+.genreItem>.itemTitle{
+    padding-left: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+   color:var(--black);
+   font-family: var(--font_fam_pop);
+}

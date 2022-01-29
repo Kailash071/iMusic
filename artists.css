@@ -1,0 +1,106 @@
+.main>.contentArtists {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to right bottom, #424142, #5d5b5e, #79777b, #96959a, #b3b3ba, #bac2d2, #bbd3e9, #b6e5fd, #8aedfd, #66f4e9, #6cf6c2, #97f48d);
+  border-radius: 25px;
+  padding-left: 50px;
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+}
+.contentArtists > .artists {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.artists > .heading {
+  width: 100%;
+  height: 50px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.artists > .artistsItems {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  padding: 10px 0;
+}
+
+.artistsItem {
+  width: 230px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #b7b7b94b;
+}
+.artistsItem:hover {
+  cursor: pointer;
+  background-color: #b7b7b9b6;
+}
+.Artistposter {
+  display: flex;
+  flex-direction: column;
+}
+.Artistposter > img {
+  width: 180px;
+  border-radius: 500px;
+  padding-bottom: 10px;
+}
+.Artistposter > .playBtn {
+  border: 2px solid var(--green);
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  margin-top: 160px;
+  margin-left: 150px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 500px;
+  transition: 5s;
+}
+.playBtn>a{
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+.playBtn:hover > img {
+  transform: scale(1.29);
+}
+.artistsItem:hover > .Artistposter > .playBtn {
+  display: flex;
+}
+.artistsItem > .posterDetails {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 0 0 8px 8px;
+  color: var(--black);
+  padding-left: 5px;
+}
+.posterTitle,
+.posterDesc {
+  align-items: center;
+}
+.posterTitle {
+  font-size: 1rem;
+}
+.posterDesc {
+  font-size: 0.8rem;
+}
