@@ -17,7 +17,7 @@
                 $idName = $_REQUEST['id'];
                 //  echo $idName;
                 if ($idName != null) {
-                    $sql = "SELECT * FROM `musics` WHERE artistName='$idName'";
+                    $sql = "SELECT * FROM `musics` WHERE artistName='$idName' or genre='$idName' ";
                     $songs = array();
                     $result = mysqli_query($conn, $sql);
                     while ($song = mysqli_fetch_assoc($result)) {

@@ -9,23 +9,33 @@
         <div class="genreItems">
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=hindi">
                 <div class="itemTitle">Hindi</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=romance">
                 <div class="itemTitle">Romance</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                 <a href="playSongs.php?id=focus">
                 <div class="itemTitle">Focus</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=workout">
                 <div class="itemTitle">Workout</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=party">
                 <div class="itemTitle">Party</div>
+               </a>
             </button>
            
         </div>
@@ -35,39 +45,57 @@
         <div class="genreItems">
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=chill">
                 <div class="itemTitle">Chill</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=romance">
                 <div class="itemTitle">Romance</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=feel good">
                 <div class="itemTitle">Feel Good</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=dance">
                 <div class="itemTitle">Dance</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=party">
                 <div class="itemTitle">Party</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=workout">
                 <div class="itemTitle">Workout</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=sleep">
                 <div class="itemTitle">Sleep</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=indian indie">
                 <div class="itemTitle">Indian Indie</div>
+               </a>
             </button>
             <button class="genreItem">
                 <div class="itemColor"></div>
+                <a href="playSongs.php?id=winter vibes">
                 <div class="itemTitle">Winter Vibes</div>
+               </a>
             </button>
            
         </div>
