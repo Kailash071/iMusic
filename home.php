@@ -16,10 +16,10 @@
          $count = 0;
          foreach ($songs as $song) {
             $count++;
-            echo ' <div class="music" onclick="playMe('.$count.')">
-               <span class="title">' . $song['title'] . '</span>
+            echo ' <div class="music" >
+               <span class="title" onclick="playMe('.$count.')">' . $song['title'] . '</span>
                 <div class="btns" id="btns">
-               <button   id="downloadSong"><img src="./assets/logos/download.png" alt="not found"></button>              
+                <a href="uploadedMusics/' . $song["songFilePath"] . '"  class="downloadSong" id="downloadSong" download><img src="./assets/logos/download.png" alt="not found"></a>              
             </div>
                </div>';
             }

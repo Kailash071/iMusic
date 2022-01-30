@@ -4,6 +4,7 @@
 
     <div class="playlistContent" id="playlistContent">
         <div class="artistsPlayList" id="artistsPlayList">
+
             <div class="artistName" id="artistName"><?php echo $_REQUEST['id']; ?></div>
             <div class="artistSongs" id="artistSongs">
                 <div class="songHeading">
@@ -26,34 +27,31 @@
                     $count = 0;
                     foreach ($songs as $song) {
                         $count++;
-                        echo ' <div class="song" id="song" onclick="playMe(' . $count . ')">
-                        <div class="songNo" id="songNo">' . $count . '</div>
-                        <div class="songName" id="songName">' . $song["title"] . '</div>
-                        <div class="songArtist" id="songArtist">' . $song["artistName"] . '</div>
-                        <div class="downloadBtn">
-                        <button   class="downloadSong" id="downloadSong"><img src="./assets/logos/download.png" alt="not found"></button>              
-                        </div>
-                        <div class="moreOptions" id="moreOptions">
-                        <button   class="downloadSong" id="downloadSong"><img src="./assets/logos/more.png" alt="not found"></button>              
-                        </div>
-                      
-                    </div>';
+                        echo ' <div class="song" id="song" >
+                            <div class="songNo" id="songNo">' . $count . '</div>
+                            <div class="songName" id="songName" onclick="playMe(' . $count . ')">' . $song["title"] . '</div>
+                            <div class="songArtist" id="songArtist" onclick="playMe(' . $count . ')">' . $song["artistName"] . '</div>
+                            <div class="downloadBtn">
+                            <a href="uploadedMusics/' . $song["songFilePath"] . '"  class="downloadSong" id="downloadSong" download><img src="./assets/logos/download.png" alt="not found"></a>              
+                            </div>
+                            <div class="moreOptions" id="moreOptions">
+                            <button   class="moreOptions" id="moreOptions" ><img src="./assets/logos/more.png" alt="not found"></button>              
+                            </div>
+                        
+                        </div>';
                     }
-                    //     <div class="songPlayBtn" id="songPlayBtn">
-                    //     <button id="' . $count . '" class="playBtn" name="songItemPlay"><img src="./assets/logos/icons8-playBlue-24.png" alt="not found"></button>
-                    //     <button id="' . $count . '" class="pauseBtn" name="songItemPlay"><img src="./assets/logos/icons8-pause-24.png" alt="not found"></button>
-                    // </div>
                 }
                 ?>
             </div>
         </div>
     </div>
+
     <div class="mainPlayerBar" id="mainPlayerBar">
         <div class="progressBar">
             <input type="range" name="range" id="myProgressBar" min="0" max="100" value="0">
         </div>
         <div class="icons">
-        <img src="./assets/logos/icons8-back-arrow-32.png" id="backSong" alt="not found">
+            <img src="./assets/logos/icons8-back-arrow-32.png" id="backSong" alt="not found">
             <img src="./assets/logos/icons8-circled-play-32.png" id="playSong" alt="not found">
             <img src="./assets/logos/icons8-pause-button-32.png" id="pauseSong" alt="not found">
             <img src="./assets/logos/icons8-forward-button-32.png" id="nextSong" alt="not found">
@@ -75,7 +73,7 @@
         let masterSongName = document.getElementById('masterSongName');
         let masterSongArtist = document.getElementById('masterSongArtist');
         const mainPlayerBar = document.querySelector('#mainPlayerBar')
-                mainPlayerBar.style.display = "flex"
+        mainPlayerBar.style.display = "flex"
         const songFolder = './uploadedMusics/';
         let audioElement = new Audio(songFolder + '<?php echo $songs[0]["songFilePath"] ?>');
         masterSongName.innerHTML = "<?php echo $songs[0]["title"] ?>";
@@ -95,8 +93,8 @@
             masterPauseSong.style.display = "block"
             gif.style.opacity = 1;
             mainPlayerBar.style.display = "flex"
-            masterSongName.innerText = songs[song_count-1].title;
-            masterSongArtist.innerHTML = songs[song_count-1].artistName;
+            masterSongName.innerText = songs[song_count - 1].title;
+            masterSongArtist.innerHTML = songs[song_count - 1].artistName;
             console.log("music playing..:" + audioElement.src)
         }
 
