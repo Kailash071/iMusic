@@ -2,6 +2,7 @@
 `iMusic` a web music application with firebase authentication like Google,email and Phone number (otp and recaptcha) which plays music via javascript fetching music data from mysqli server .
 
 # add config.php file to `payment-system` folder and adS below code to it.
+
 <?php
 $keyId = '<your razorpay api key>';
 $keySecret = '<your razorpay secret key>';
