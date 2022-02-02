@@ -99,6 +99,29 @@ button {
 .moreOptions> button>img{
   height: 20px;
 }
+/* .moreOptions>.moreOption{
+  display: none;
+} */
+.moreOptionList{
+  width: 150px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+ margin-top: 40px;
+}
+.moreOptionList>button>a{
+  font-size:1.1rem ;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  width: inherit;
+}
+
 /***********************************************/
 
 .mainPlayerBar {

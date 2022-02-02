@@ -32,7 +32,7 @@
                     <li class="link"><a href="./album.php">Albums</a></li>
                     <li class="link"><a href="./genre.php">Genres</a></li>
                     <li class="link"><a href="./artists.php">Artists</a></li>
-                    <li class="link"><a href="#">Favourites</a></li>
+                    <li class="link"><a href="./playlists.php">PlayLists</a></li>
                 </ul>
             </div>
             <div class="navRight">

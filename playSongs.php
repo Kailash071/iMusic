@@ -32,16 +32,20 @@
                             <div class="songName" id="songName" onclick="playMe(' . $count . ')">' . $song["title"] . '</div>
                             <div class="songArtist" id="songArtist" onclick="playMe(' . $count . ')">' . $song["artistName"] . '</div>
                             <div class="downloadBtn">
-                            <a href="uploadedMusics/' . $song["songFilePath"] . '"  class="downloadSong" id="downloadSong" download><img src="./assets/logos/download.png" alt="not found"></a>              
+                              <a href="uploadedMusics/' . $song["songFilePath"] . '"  class="downloadSong" id="downloadSong" download><img src="./assets/logos/download.png" alt="not found"></a>              
                             </div>
                             <div class="moreOptions" id="moreOptions">
-                            <button   class="moreOptions" id="moreOptions" ><img src="./assets/logos/more.png" alt="not found"></button>              
+                              <button   class="moreOption" id="moreOption" ><img src="./assets/logos/more.png" alt="not found"></button>              
                             </div>
-                        
+                            <div class="moreOptionList" id="moreOptionList">
+                                 <button><a href="playlists.php">Add To Playlist</a></button>
+                                
+                            </div>
                         </div>';
                     }
                 }
                 ?>
+
             </div>
         </div>
     </div>
@@ -163,31 +167,25 @@
             masterPauseSong.style.display = "block"
             mainPlayerBar.style.display = "flex"
         })
+        /**************************************************/
+        const song = document.querySelector('#song')
+        const moreOption = document.querySelector('#moreOption')
+        const moreOptionList = document.querySelector('#moreOptionList')
 
-        // const playBtn = document.querySelector('#playBtn')
-
-
-        // const makeAllPlays = () => {
-        //     Array.from(document.getElementsByName('songItemPlay')).forEach((element) => {
-        //         element.classList.remove('fa-pause-circle');
-        //         element.classList.add('fa-play-circle');
-        //     })
-        // }
-
-        // Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
-        //     element.addEventListener('click', (e) => {
-        //         makeAllPlays();
-        //         songIndex = parseInt(e.target.id);
-        //         // e.target.classList.remove('fa-play-circle');
-        //         // e.target.classList.add('fa-pause-circle');
-        //         audioElement.src = `./uploadedMusics/${songs[songIndex].songFilePath}`;
-        //     masterSongName.innerText = songs[songIndex].title;
-        //     masterSongArtist.innerHTML = songs[songIndex].artistName;
-        //         audioElement.currentTime = 0;
-        //         audioElement.play();
-        //         gif.style.opacity = 1;
-        //         masterPlaySong.style.display = "none"
-        //         masterPauseSong.style.display = "block"
-        //     })
+        // song.addEventListener('mouseover', ()=> {
+        //     moreOption.style.display = "flex"
         // })
+        // song.addEventListener('mouseout', ()=> {
+        //     moreOption.style.display = "none"
+        // })
+
+        moreOption.addEventListener('mouseover', ()=> {
+            moreOptionList.style.display = "flex"
+        })
+        moreOptionList.addEventListener('mouseover', ()=> {
+            moreOptionList.style.display = "flex"
+        })
+        moreOptionList.addEventListener('mouseout', ()=> {
+            moreOptionList.style.display = "none"
+        })
     </script>

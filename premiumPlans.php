@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="payBtn">
-                    <button>Get Premium</button>
+                   <a href="./payment-system/payment.php?amount=7.00">Get Premium</a>
                 </div>
             </div>
             <div class="card2">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="payBtn">
-                    <button>Get Premium</button>
+                <a href="./payment-system/payment.php?amount=119.00">Get Premium</a>
                 </div>
             </div>
             <div class="card3">
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="payBtn">
-                    <button>Get Premium</button>
+                <a href="./payment-system/payment.php?amount=165.00">Get Premium</a>
                 </div>
             </div>
             <div class="card4">
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="payBtn">
-                    <button>Get Premium </button>
+                <a href="./payment-system/payment.php?amount=199.00">Get Premium</a>
                 </div>
             </div>
         </div>

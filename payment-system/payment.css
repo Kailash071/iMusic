@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*,*::before,*::after{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body,.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Varela Round;
+  
+    background-color: rgba(230, 228, 228, 0.563);
+}
+.content{
+    width: 650px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    background-image: linear-gradient(to bottom, #41f267, #00f8b1, #2afae5, #88f7ff, #ccf3ff, #c7e2e7, #c2d0d1, #bdbebe, #939494, #6b6c6c, #454747, #232525);
+    border-radius: 8px;
+    box-shadow: 2px -2px 16px 8px  rgba(169, 203, 238, 0.29);
+    
+}
+.content>.heading>span{
+    font-size: 2rem;
+}
+.form-input{
+    width: 500px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.form-input-btn{
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:200px;
+}
+input[type=text],input[type=email],input[type=tel]{
+    width: 400px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-family: Varela Round;
+    margin: 10px 0;
+    padding: 10px 5px;
+}
+input[type=submit],input[type=reset]{
+    width: 100px;
+    padding: 10px 5px;
+    font-size: 0.9rem;
+    font-family: Varela Round;
+    background-color: rgb(245, 241, 241);
+    border-radius: 5px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+}
+input[type=reset]{
+    background-color: rgba(245, 241, 241, 0.249);
+}
+input[type=submit]:hover,input[type=reset]:hover{
+    background-color: #1fdf64;
+    cursor: pointer;
+}
