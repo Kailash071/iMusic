@@ -85,3 +85,9 @@ auth.onAuthStateChanged((user) => {
 if (sessionStorage.getItem("sessionPhone")!= null) {
   userName.innerHTML = sessionStorage.getItem("sessionPhone")
 }
+
+/**************************************************/
+// if(sessionStorage.getItem("premiumAcc") != null){
+//   premiumPlans.style.display = "none" 
+// }
+// console.log("premium Account Id :"+ sessionStorage.getItem("premiumAcc"))

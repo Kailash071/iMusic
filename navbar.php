@@ -1,6 +1,6 @@
+<?php require('./phpDatabase/database.php');?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,3 +61,17 @@
         <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
         <script src="./firebase/firebaseSetting.js"></script>
         <script src="./navbar.js"></script>
+
+
+
+<!-- <?php
+$sql = "SELECT * FROM `premiumaccounts`";
+$accounts = array();
+$result = mysqli_query($conn,$sql);
+while($row = mysqli_fetch_assoc($result)){
+    $accounts[] = $row;
+}
+foreach($accounts as $account){
+    //if($account["email"] == )
+}
+?> -->

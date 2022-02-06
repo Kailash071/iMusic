@@ -75,3 +75,6 @@ if ($displayCurrency !== 'INR')
 $json = json_encode($data);
 
 require("checkout/{$checkout}.php");
+
+$_SESSION["Uemail"] = $_POST["Uemail"];
+$_SESSION["Uphone"] = $_POST["Uphone"];

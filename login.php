@@ -1,4 +1,4 @@
-<!-- <?php session_start();?> -->
+<!-- <?php session_start(); ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
                 <button class="registerBtn" name="registerBtn" id="registerBtn"><a href="./register.php">Register</a></button>
             </div>
         </div>
-        <div class="form">
+        <div class="form" id="formDiv">
             <form method="post" id="loginForm">
                 <div class="formCard">
                     <div class="form-label">
@@ -53,11 +53,30 @@
                     <div class="form-submit">
                         <input type="submit" value="Login" name="login" id="login">
                     </div>
-                   
+
+                    <div class="messageCardLoading" id="messageCardLoading">
+                        <div class="card">
+                            <img src="./assets/logos/icons8-loading-circle-bgr.gif" alt="not found">
+                            <!-- 128px -->
+                        </div>
+                    </div>
+                    <div class="messageCardError" id="messageCardError">
+                        <div class="card">
+                            <img src="./assets/logos/warning (2).png" alt="not found">
+                            <!-- 128px -->
+                            <span class="errorMessage" id="errorMessage">Error message here</span>
+                        </div>
+                    </div>
+                    <!-- <div class="messageCardFailure" id="messageCardFailure">
+                        <div class="card">
+                            <img src="../assets/logos/cancel (2).png" alt="not found">
+                        </div>
+                    </div> -->
             </form>
         </div>
     </div>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
@@ -66,16 +85,16 @@
 </body>
 
 </html>
-<!-- <?php 
-    if(isset($_POST["login"])){
-    $sessionEmail = $_POST["sessionEmail"];
-    $_SESSION["user-email"] = $sessionEmail;
-    print_r($_SESSION["user-email"]);
-    }
-?>
+<!-- <?php
+        if (isset($_POST["login"])) {
+            $sessionEmail = $_POST["sessionEmail"];
+            $_SESSION["user-email"] = $sessionEmail;
+            print_r($_SESSION["user-email"]);
+        }
+        ?>
 
- <?php 
-if($_SESSION["user-email"] != null){
-    header("Location:http://localhost/iMusic/home.php");
-}
-?>  -->
+ <?php
+    if ($_SESSION["user-email"] != null) {
+        header("Location:http://localhost/iMusic/home.php");
+    }
+    ?>  -->

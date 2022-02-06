@@ -25,10 +25,10 @@
                     <label for="artistsName">Artist Name</label>
                     <input type="text" name="artistName" id="artistName">
                 </div>
-                <!-- <div class="form-controls">
-                    <label for="trackTime">Track Time</label>
-                    <input type="text" name="trackTime" id="trackTime">
-                </div> -->
+                <div class="form-controls">
+                    <label for="genre">Genre</label>
+                    <input type="text" name="genre" id="genre">
+                </div>
                 <div class="form-controls">
                     <label for="file">Song File</label>
                     <input type="file" name="fileToUpload" id="fileToUpload">
@@ -39,44 +39,22 @@
                 </div>
             </div>
         </form>
-        <div class="messageCardSuccess" id="messageCardSuccess">
-            <div class="card">
-                <img src="../assets/logos/checked.png" alt="not found">
-                   <!-- 128px -->
-            </div>
-        </div>
-        <div class="messageCardFailure" id="messageCardFailure">
-            <div class="card">
-                <img src="../assets/logos/cancel (2).png" alt="not found">
-                   <!-- 128px -->
-            </div>
-        </div>
-        <div class="messageCardError" id="messageCardError">
-            <div class="card">
-                <img src="../assets/logos/warning (2).png" alt="not found">
-                <!-- 128px -->
-            </div>
-        </div>
     </div>
     <!-- <script src="./uploadMusic.js"></script> -->
 </body>
 </html>
-<!-- <script src="./spotify-web-api.js"></script>
-<script>
-    var spotifyApi = new SpotifyWebApi();
-    spotifyApi.setAccessToken('8bd1fa30abe44e7690039c3a296f921c');
-    
-    // get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
-    spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
-        if (err) console.error(err);
-        else console.log('Artist albums', data);
-    });
-    spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE').then(
-  function (data) {
-    console.log('Artist albums', data);
-  },
-  function (err) {
-    console.error(err);
-  }
-);
-</script> -->
+    <!-- <div class="messageCardSuccess" id="messageCardSuccess">
+                <div class="card">
+                    <img src="../assets/logos/checked.png" alt="not found">
+                </div>
+            </div>
+            <div class="messageCardFailure" id="messageCardFailure">
+                <div class="card">
+                    <img src="../assets/logos/cancel (2).png" alt="not found">
+                </div>
+            </div>
+            <div class="messageCardError" id="messageCardError">
+                <div class="card">
+                    <img src="../assets/logos/warning (2).png" alt="not found">
+                </div>
+            </div> -->

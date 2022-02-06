@@ -83,7 +83,23 @@
                     <div class="form-submit-phone">
                         <input type="submit" value="Register" name="RegisterNumber" id="registerNumber">
                     </div>
+
+                    <div class="messageCardLoading" id="messageCardLoading">
+                        <div class="card">
+                            <img src="./assets/logos/icons8-loading-circle-bgr.gif" alt="not found">
+                            <!-- 128px -->
+                        </div>
+                    </div>
+                    <div class="messageCardError" id="messageCardError">
+                        <div class="card">
+                            <img src="./assets/logos/warning (2).png" alt="not found">
+                            <!-- 128px -->
+                            <span class="errorMessage" id="errorMessage">Error message here</span>
+                        </div>
+                    </div>
                 </div>
+
+
             </form>
         </div>
     </div>

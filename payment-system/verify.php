@@ -1,10 +1,11 @@
 <?php
-
+require('../phpDatabase/database.php');
 require('config.php');
 
 session_start();
 
 require('razorpay-php/Razorpay.php');
+
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 
@@ -12,12 +13,10 @@ $success = true;
 
 $error = "Payment Failed";
 
-if (empty($_POST['razorpay_payment_id']) === false)
-{
+if (empty($_POST['razorpay_payment_id']) === false) {
     $api = new Api($keyId, $keySecret);
 
-    try
-    {
+    try {
         // Please note that the razorpay order ID must
         // come from a trusted source (session here, but
         // could be database or something else)
@@ -28,26 +27,35 @@ if (empty($_POST['razorpay_payment_id']) === false)
         );
 
         $api->utility->verifyPaymentSignature($attributes);
-    }
-    catch(SignatureVerificationError $e)
-    {
+    } catch (SignatureVerificationError $e) {
         $success = false;
         $error = 'Razorpay Error : ' . $e->getMessage();
     }
 }
 
-if ($success === true)
-{
+if ($success === true) {
     $html = "<p>Your payment was successful</p>
              <p>Payment ID: {$_POST['razorpay_payment_id']}</p>
              <a href='../home.php'><button>Back to Home</button></a>
              ";
-             
-}
-else
-{
+    // $_SESSION["premiumAcc"] = $_POST['razorpay_payment_id'];
+
+} else {
     $html = "<p>Your payment failed</p>
              <p>{$error}</p>";
 }
 
 echo $html;
+?>
+
+<!-- <?php
+$uemail = $_SESSION["Uemail"];
+$uphone = $_SESSION["Uphone"];
+$paymentId = $_POST['razorpay_payment_id'];
+$sql = "INSERT INTO `premiumaccounts` (email,phone,paymentId) VALUES ('$uemail','$uphone','$paymentId')";
+if (mysqli_query($conn, $sql)) {
+    echo '<script>alert("Premium Paid");</script>';
+} else {
+    echo '<script>alert("Something Went Wrong....!");</script>';
+}
+?> -->

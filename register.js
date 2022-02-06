@@ -7,8 +7,13 @@ const passwordField = document.querySelector("#password")
 const dayField = document.querySelector("#day")
 const monthField = document.querySelector("#month")
 const yearField = document.querySelector("#year")
-
 const submit = document.querySelector("#register")
+
+const messageCardLoading = document.querySelector("#messageCardLoading")
+const messageCardError = document.querySelector("#messageCardError")
+const messageCardSuccess = document.querySelector("#messageCardSuccess")
+const errorMessage = document.querySelector("#errorMessage")
+const successMessage = document.querySelector("#successMessage")
 
 const auth = firebase.auth()
 const database = firebase.firestore()
@@ -29,11 +34,15 @@ const signUpFunction = () => {
   let cYear = currentDate.getFullYear()
   const cDate = cDay + "-" + cMonth + "-" + cYear
 
+  messageCardLoading.style.display = "flex"
+
   auth
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
       console.log("Signed Up Successfully !")
-      
+      successMessage.innerHTML  = "Registered Successfully..!"
+      messageCardSuccess.style.display = "flex"
+      messageCardLoading.style.display = "none"
       const usersCollection = database.collection("usersWemail")
       const ID = usersCollection
         .add({
@@ -45,14 +54,26 @@ const signUpFunction = () => {
         })
         .then(() => {
           console.log("User Registered successfully !")
+          messageCardSuccess.style.display = "none"
+          messageCardLoading.style.display = "flex"
           window.location.assign("login.php")
         })
         .catch((error) => {
           console.error(error)
+          messageCardError.style.display = "flex"
+          errorMessage.innerHTML = error
+          setTimeout(()=>{
+            window.location.reload()
+          },3000)
         })
     })
     .catch((error) => {
       console.error(error)
+      messageCardError.style.display = "flex"
+      errorMessage.innerHTML = error
+      setTimeout(()=>{
+        window.location.reload()
+      },3000)
     })
 }
 submit.addEventListener("click", signUpFunction)

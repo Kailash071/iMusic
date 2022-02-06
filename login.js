@@ -15,6 +15,9 @@ document.querySelector("#loginForm").addEventListener("submit", (e) => {
 const emailField = document.querySelector("#email")
 const passwordField = document.querySelector("#password")
 const login = document.querySelector("#login")
+const messageCardLoading = document.querySelector("#messageCardLoading")
+const messageCardError = document.querySelector("#messageCardError")
+const errorMessage = document.querySelector("#errorMessage")
 
 const auth = firebase.auth()
 const database = firebase.firestore()
@@ -24,16 +27,18 @@ const signInWithEmailFunction = () => {
   const email = emailField.value
   const password = passwordField.value
   //Built in firebase function responsible for authentication
+  messageCardLoading.style.display = "flex";
+  
   auth.signInWithEmailAndPassword(email, password)
   .then(() => {
     //Signed in successfully
-    console.log('You\'re successfully signed in !');
     const usersCollection = database.collection("usersWemail")
     const query = usersCollection.where("email", "==", email)
     query
-      .get()
-      .then((snapshot) => {
-        snapshot.forEach((user) => {
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((user) => {
+          console.log('You\'re successfully signed in !');
           console.log("email matched...")
           console.log(user.id, " => ", user.data())
           sessionStorage.setItem("sessionEmail", user.data().email)
@@ -43,12 +48,24 @@ const signInWithEmailFunction = () => {
       })
       .catch((error) => {
         console.error(error)
+        messageCardError.style.display = "flex"
+        errorMessage.innerHTML = error
+        setTimeout(()=>{
+          window.location.reload();
+        },3000)
       }) 
   })
   .catch(error => {
     console.error(error);
+     messageCardError.style.display = "flex"
+     errorMessage.innerHTML = error
+     setTimeout(()=>{
+      window.location.reload();
+    },3000)
   })
 }
+
+
 login.addEventListener("click", signInWithEmailFunction)
 
 /**  const usersCollection = database.collection("usersWemail")

@@ -1,7 +1,6 @@
 
-// const successM = document.querySelector("#messageCardSuccess")
-// const failureM = document.querySelector("#messageCardFailure")
-// const errorM = document.querySelector("#messageCardError")
+// const messageCardError = document.querySelector("#messageCardError")
+// const messageCardSuccess = document.querySelector("#messageCardSuccess")
 // const uploadBtn = document.querySelector("#upload")
 
 // const successFunction = () => {

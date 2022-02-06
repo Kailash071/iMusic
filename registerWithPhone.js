@@ -18,6 +18,10 @@ const phoneNumberField = document.querySelector("#phoneNumber")
 const getCodeButton = document.querySelector("#getCode")
 const codeField = document.querySelector("#otp")
 const registerNumberBtn = document.querySelector("#registerNumber")
+const messageCardLoading = document.querySelector("#messageCardLoading")
+const messageCardError = document.querySelector("#messageCardError")
+const errorMessage = document.querySelector("#errorMessage")
+
 
 const auth = firebase.auth()
 const database = firebase.firestore()
@@ -59,7 +63,7 @@ const signInWithPhone = (sentCodeId) => {
     .signInWithCredential(credential)
     .then(() => {
       console.log("Signed in successfully !")
-
+      messageCardLoading.style.display = "flex";
       //entering record to db for every login for the shake of records
       const name = nameField.value
       const phoneNumber = phoneCodeField.value + phoneNumberField.value
@@ -78,6 +82,7 @@ const signInWithPhone = (sentCodeId) => {
           createdAt: cDate,
         })
         .then(() => {
+
           console.log("User Registered successfully !")
           sessionStorage.setItem("sessionPhone",phoneNumber);
           window.location.assign("home.php")
@@ -85,11 +90,21 @@ const signInWithPhone = (sentCodeId) => {
         })
         .catch((error) => {
           console.error(error)
+          messageCardError.style.display = "flex"
+          errorMessage.innerHTML = error
+          setTimeout(()=>{
+            window.location.reload();
+          },3000)
         })
 
     })
     .catch((error) => {
       console.error(error)
+      messageCardError.style.display = "flex"
+      errorMessage.innerHTML = error
+      setTimeout(()=>{
+        window.location.reload();
+      },3000)
     })
 }
 

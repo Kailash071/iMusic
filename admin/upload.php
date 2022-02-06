@@ -16,6 +16,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 if (isset($_POST['upload'])) {
     $title = $_POST['title'];
     $artistName =$_POST['artistName'];
+    $genre =$_POST['genre'];
     //To see below output of fileName go to ./readme folder 
 
     //  $fileName = $_FILES['fileToUpload']['tmp_name']; // name in files(database table)- C:xampp	mpphp509A.tmp // this doesn't work while downloading
@@ -60,30 +61,15 @@ if (isset($_POST['upload'])) {
         //if everything is ok , try to upload file
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo '<script>alert("The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . "has been uploaded.");</script>';
-            $sql = "INSERT INTO `musics` (title,artistName,songFilePath) VALUES('$title','$artistName','$fileName')";
+            $sql = "INSERT INTO `musics` (title,genre,artistName,songFilePath) VALUES('$title','$genre','$artistName','$fileName')";
 
             if (mysqli_query($conn, $sql)) {
-                echo '<script>alert("File Uploaded to database.");</script>';
-                // echo '<script>
-                // const successM = document.querySelector("#messageCardSuccess")          
-                // successM.style.display = "flex" 
-                // </script>';
-              
+                echo '<script>alert("File Uploaded to database.");</script>';              
             } else {
                echo '<script>alert("File failed to upload in database");</script>';
-                // echo '<script>
-                // const failureM = document.querySelector("#messageCardFailure")          
-                // failureM.style.display = "flex" 
-                // </script>';
-                
             }
         } else {
-            echo '<script>alert("Sorry, there was an error uploading your file.");</script>';
-            // echo '<script>
-            // const errorM = document.querySelector("#messageCardError")          
-            // errorM.style.display = "flex" 
-            // </script>';
-          
+           echo '<script>alert("Sorry, there was an error uploading your file.");</script>';
         }
     }
 }
@@ -93,24 +79,12 @@ if (isset($_POST['upload'])) {
     document.querySelector("#uploadMusicForm").addEventListener("submit", (e) => {
   e.preventDefault()
 })
-    const successM = document.querySelector("#messageCardSuccess")
-const failureM = document.querySelector("#messageCardFailure")
-const errorM = document.querySelector("#messageCardError")
-const uploadBtn = document.querySelector("#upload")
-
-const successFunction = () => {
-  successM.style.display = "flex"
-}
-const failureFunction = () => {
-  failureM.style.display = "flex"
-}
-const errorFunction = () => {
-  errorM.style.display = "flex"
-}
-
-uploadBtn.addEventListener('click',()=>{
-    successFunction()
-    failureFunction()
-    errorFunction()
-})
 </script> -->
+ <!-- echo '<script>
+            // const messageCardError = document.querySelector("#messageCardError")          
+            // messageCardError.style.display = "flex" 
+            // setTimeout(()=>{
+            //     window.location.reload()
+            //   },2000) 
+            // </script>'; -->
+          
