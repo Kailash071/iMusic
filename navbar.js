@@ -59,9 +59,9 @@ window.addEventListener("load", () => {
     query.get().then(snapshot => {
       snapshot.forEach(user => {
         console.log(user.id, ' => ', user.data());
+        console.log("user with premium account")
+        premiumPlans.style.display = "none"
       });
-      console.log("user with premium account")
-      premiumPlans.style.display = "none"
     })
     .catch(error => {
       console.error(error);
