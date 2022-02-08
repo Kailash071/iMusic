@@ -31,6 +31,46 @@ window.addEventListener("load", () => {
       actionBtn.style.display = "none"
    
   }
+
+  if(sessionStorage.getItem("sessionEmail") != null){
+    const currentUser = sessionStorage.getItem("sessionEmail")
+    console.log("current user:"+currentUser)
+
+    const usersCollection = database.collection('premiumAccounts');
+    const query = usersCollection.where('email', '==', currentUser);
+    query.get().then(snapshot => {
+      snapshot.forEach(user => {
+        console.log(user.id, ' => ', user.data());
+        console.log("user with premium account")
+        premiumPlans.style.display = "none"
+      });
+    })
+    .catch(error => {
+      console.error(error);
+    });
+
+  }
+  else if(sessionStorage.getItem("sessionPhone") != null){
+    const currentUser = sessionStorage.getItem("sessionPhone").substring(3)
+    console.log("current user:"+currentUser)
+
+    const usersCollection = database.collection('premiumAccounts');
+    const query = usersCollection.where('phone', '==', currentUser);
+    query.get().then(snapshot => {
+      snapshot.forEach(user => {
+        console.log(user.id, ' => ', user.data());
+      });
+      console.log("user with premium account")
+      premiumPlans.style.display = "none"
+    })
+    .catch(error => {
+      console.error(error);
+    });
+    
+  }
+  else{
+    console.log("user from login with google ")
+  }
 })
 
 premiumBtn.addEventListener("click", () => {
