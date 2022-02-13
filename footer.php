@@ -9,10 +9,8 @@
 
         <div class="links">
             <a href="./home.php">Home</a>
-            <a href="#">Privacy</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Help Center</a>
-            
+            <a href="./privacy.php">Privacy</a>
+            <a href="./contactUs.php">Contact Us</a>            
         </div>
     </div>
     <div class="footerBottom">

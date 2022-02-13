@@ -168,9 +168,9 @@
             mainPlayerBar.style.display = "flex"
         })
         /**************************************************/
-        const song = document.querySelector('#song')
-        const moreOption = document.querySelector('#moreOption')
-        const moreOptionList = document.querySelector('#moreOptionList')
+        // const song = document.querySelector('#song')
+        // const moreOption = document.querySelector('#moreOption')
+        // const moreOptionList = document.querySelector('#moreOptionList')
 
         // song.addEventListener('mouseover', ()=> {
         //     moreOption.style.display = "flex"
@@ -179,13 +179,13 @@
         //     moreOption.style.display = "none"
         // })
 
-        moreOption.addEventListener('mouseover', ()=> {
-            moreOptionList.style.display = "flex"
-        })
-        moreOptionList.addEventListener('mouseover', ()=> {
-            moreOptionList.style.display = "flex"
-        })
-        moreOptionList.addEventListener('mouseout', ()=> {
-            moreOptionList.style.display = "none"
-        })
+        // moreOption.addEventListener('mouseover', ()=> {
+        //     moreOptionList.style.display = "flex"
+        // })
+        // moreOptionList.addEventListener('mouseover', ()=> {
+        //     moreOptionList.style.display = "flex"
+        // })
+        // moreOptionList.addEventListener('mouseout', ()=> {
+        //     moreOptionList.style.display = "none"
+        // })
     </script>

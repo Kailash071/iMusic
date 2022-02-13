@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu+Mono&family=Varela+Round&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-family:Poppins;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+    .container .title {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
+        color: #000000;
+        font-family: Poppins;
+    }
+
+.cards{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    color:#000000;
+    align-items:center;
+}
+.call, .email, .privacy {
+    width: 280px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;   
+    gap: 10px;
+    padding:10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 4px -4px 16px 8px rgb(0 0 0 / 0.22);
+}
+#btnCall,#btnPrivacy,#btnEmail {
+    font-size: 1.2rem;
+    letter-spacing: 0.25px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #1fdf64;
+    outline: none;
+    cursor: pointer;
+}
+    #btnCall:hover, #btnEmail:hover, #btnPrivacy:hover{
+        background-color: #1fdf64;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000000;
+        width:100%;
+      font-family: Poppins;
+       width:80px;
+       font-weight: 600;
+       padding:10px 12px;
+    }
+    .call>h3,.privacy>h3,.email>h3{
+        border-bottom:1px solid #1fdf64;
+        cursor:none;
+    }
+    span{
+        width: 260px;
+        /* border: 1px solid red; */
+    }
