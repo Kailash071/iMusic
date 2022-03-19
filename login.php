@@ -47,13 +47,22 @@
                     <div class="form-controls">
                         <label for="password">Enter your password</label>
                         <input type="password" name="password" id="password" placeholder="Password" required>
+                        <div class="forgetPassword" id="forgetPassword">
+                            <a class="passwordLink" id="passwordLink" title="Enter valid registered email id first then click here">Forget Password</a>
+                        </div>
                     </div>
-
 
                     <div class="form-submit">
                         <input type="submit" value="Login" name="login" id="login">
                     </div>
 
+                    <div class="messageCardSuccess" id="messageCardSuccess">
+                        <div class="card">
+                            <img src="./assets/logos/checked.png" alt="not found">
+                            <!-- 128px -->
+                            <span class="successMessage" id="successMessage">Error message here</span>
+                        </div>
+                    </div>
                     <div class="messageCardLoading" id="messageCardLoading">
                         <div class="card">
                             <img src="./assets/logos/icons8-loading-circle-bgr.gif" alt="not found">

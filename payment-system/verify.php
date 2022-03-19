@@ -77,6 +77,9 @@ echo $html;
             })
             .then(() => {
                 console.log("account is set to premium.")
+                setTimeout(()=>{
+                    window.location.assign("../home.php")
+                },6000)
             })
             .catch((error) => {
                 console.error(error)
@@ -84,17 +87,3 @@ echo $html;
     }
     premiumaccounts()
 </script>
-
-
-
-<!-- <?php
-        $uemail = $_SESSION["Uemail"];
-        $uphone = $_SESSION["Uphone"];
-        $paymentId = $_POST['razorpay_payment_id'];
-        $sql = "INSERT INTO `premiumaccounts` (email,phone,paymentId) VALUES ('$uemail','$uphone','$paymentId')";
-        if (mysqli_query($conn, $sql)) {
-            echo '<script>alert("Premium Paid");</script>';
-        } else {
-            echo '<script>alert("Something Went Wrong....!");</script>';
-        }
-        ?> -->

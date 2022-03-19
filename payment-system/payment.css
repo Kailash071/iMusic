@@ -22,9 +22,9 @@ body,.container{
     justify-content: center;
     align-items: center;
     gap:50px;
-    background-image: linear-gradient(to bottom, #41f267, #00f8b1, #2afae5, #88f7ff, #ccf3ff, #c7e2e7, #c2d0d1, #bdbebe, #939494, #6b6c6c, #454747, #232525);
+    background-color: rgba(70, 69, 69, 0.548);
     border-radius: 8px;
-    box-shadow: 2px -2px 16px 8px  rgba(169, 203, 238, 0.29);
+    box-shadow: 2px -2px 16px 8px  rgba(141, 141, 141, 0.29);
     
 }
 .content>.heading>span{

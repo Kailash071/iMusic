@@ -81,6 +81,24 @@ body {
   height: 104px;
   display: flex;
   flex-direction: column;
+  justify-content:space-evenly;
+  /* border: 1px solid red; */
+}
+.form-controls>.forgetPassword{
+  width: inherit;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.passwordLink{
+  font-size: 0.8rem;
+  padding: 1px 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.passwordLink:hover{
+  color:#095f29;
 }
 .login-option-google,.login-option-phone{
     width: 450px;
@@ -127,7 +145,7 @@ body {
 }
 #email,
 #password{
-  width: 450px;
+  width: 445px;
   height: 52px;
   border-radius: 4px;
   line-height: 24px;
@@ -201,4 +219,13 @@ body {
     word-wrap: break-word;
     /* border: 1px solid red; */
   }
- 
+  .card>.errorMessage,.card>.successMessage{
+    width: 250px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-family: var(--font_fam_pop);
+    text-align: center;
+    word-wrap: break-word;
+    /* border: 1px solid red; */
+  }

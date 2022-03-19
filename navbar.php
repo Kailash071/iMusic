@@ -62,16 +62,3 @@
         <script src="./firebase/firebaseSetting.js"></script>
         <script src="./navbar.js"></script>
 
-
-
-<!-- <?php
-$sql = "SELECT * FROM `premiumaccounts`";
-$accounts = array();
-$result = mysqli_query($conn,$sql);
-while($row = mysqli_fetch_assoc($result)){
-    $accounts[] = $row;
-}
-foreach($accounts as $account){
-    //if($account["email"] == )
-}
-?> -->

@@ -130,7 +130,7 @@ button {
   position: absolute;
   right: 0;
   bottom: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background: rgba(0, 0, 0, 0.8);
   color: #FFFFFF;
   border-color: #3d464d;
@@ -145,16 +145,17 @@ button {
 }
 
 .icons {
-  width: 100%;
+  width: 20%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   cursor: pointer;
 }
-.icons > img {
+.mainPlayerBar>.icons > img {
+  height: auto;
   cursor: pointer;
-  color: #FFFF;
   /* border: 1px solid red; */
 }
 

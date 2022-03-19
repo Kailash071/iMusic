@@ -32,28 +32,30 @@ const signInWithEmailFunction = () => {
   auth.signInWithEmailAndPassword(email, password)
   .then(() => {
     //Signed in successfully
-    const usersCollection = database.collection("usersWemail")
-    const query = usersCollection.where("email", "==", email)
-    query
-    .get()
-    .then((snapshot) => {
-      snapshot.forEach((user) => {
-          console.log('You\'re successfully signed in !');
-          console.log("email matched...")
-          console.log(user.id, " => ", user.data())
-          sessionStorage.setItem("sessionEmail", user.data().email)
-          //  console.log("session:"+sessionStorage.getItem("sessionEmail"));
-          window.location.assign("home.php")
-        })
-      })
-      .catch((error) => {
-        console.error(error)
-        messageCardError.style.display = "flex"
-        errorMessage.innerHTML = error
-        setTimeout(()=>{
-          window.location.reload();
-        },3000)
-      }) 
+    window.location.assign("home.php")
+    sessionStorage.setItem("sessionEmail", email)
+  //  const usersCollection = database.collection("usersWemail")
+   // const query = usersCollection.where("email", "==", email)
+    // query
+    // .get()
+    // .then((snapshot) => {
+    //   snapshot.forEach((user) => {
+    //       console.log('You\'re successfully signed in !');
+    //       console.log("email matched...")
+    //       console.log(user.id, " => ", user.data())
+    //       sessionStorage.setItem("sessionEmail", user.data().email)
+    //       //  console.log("session:"+sessionStorage.getItem("sessionEmail"));
+    //       window.location.assign("home.php")
+    //     })
+    //   })
+    //   .catch((error) => {
+    //     console.error(error)
+    //     messageCardError.style.display = "flex"
+    //     errorMessage.innerHTML = error
+    //     setTimeout(()=>{
+    //       window.location.reload();
+    //     },3000)
+    //   }) 
   })
   .catch(error => {
     console.error(error);
@@ -64,8 +66,6 @@ const signInWithEmailFunction = () => {
     },3000)
   })
 }
-
-
 login.addEventListener("click", signInWithEmailFunction)
 
 /**  const usersCollection = database.collection("usersWemail")
@@ -113,3 +113,34 @@ const loginOptionPhone = document.querySelector("#login-option-phone")
 loginOptionPhone.addEventListener("click", () => {
   window.location.assign("registerWithPhone.php")
 })
+
+/********************FORGET PASSWORD******************************/
+const forgetPasswordLink = document.querySelector('#passwordLink')
+const successMessage = document.querySelector("#successMessage")
+
+auth.useDeviceLanguage();
+
+const resetPasswordFunction = () => {
+    const email = emailField.value;
+
+    //Built in Firebase function that sends password reset emails
+    auth.sendPasswordResetEmail(email)
+    .then(() => {
+        console.log('Password Reset Email Sent Successfully!');
+        successMessage.innerHTML  = "Password Reset Email Sent Successfully!!"
+        messageCardSuccess.style.display = "flex"
+        setTimeout(()=>{
+          window.location.reload()
+        },3000)
+    })
+    .catch(error => {
+        console.error(error);
+        messageCardError.style.display = "flex"
+        errorMessage.innerHTML = error
+        setTimeout(()=>{
+         window.location.reload();
+       },3000)
+    });
+}
+
+forgetPasswordLink.addEventListener('click', resetPasswordFunction);
